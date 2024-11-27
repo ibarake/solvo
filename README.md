@@ -5,10 +5,15 @@ This repository contains my submission for the Full Stack Web Developer technica
 ## Project Structure
 
 ├── index.html
+
 ├── global.css
+
 ├── index.js
+
 ├── debug.js
+
 ├── corrected.js
+
 └── README.md
 
 ## 🚀 Features
