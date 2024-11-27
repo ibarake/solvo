@@ -1,0 +1,13 @@
+{
+  "name": "solvo-test",
+  "version": "1.0.0",
+  "description": "solvo skill assesment",
+  "main": "README.md",
+  "scripts": {
+    "start": "open index.html || start index.html",
+    "debug": "node debug.js",
+    "corrected": "node corrected.js"
+  },
+  "author": "Issa Barake Slebi",
+  "license": "MIT"
+}
