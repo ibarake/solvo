@@ -77,6 +77,40 @@ class Features extends HTMLElement {
     constructor() {
         super();
         this.swiper = null;
+        window.addEventListener('resize', () => {
+            this.#initSwiper();
+        });
+    }
+
+    #destroySwiper() {
+        if (this.swiper) {
+            const swiper = new Swiper('.swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                centeredSlides: true,
+                centeredSlidesBounds: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 3,
+                        watchOverflow: true,
+                        navigation: false,
+                        pagination: false,
+                        loop: false,
+                    }
+                },
+                loop: true,
+            });
+            this.swiper.destroy(true, true);
+            this.swiper = swiper;
+        }
     }
 
     #initSwiper() {
@@ -97,20 +131,22 @@ class Features extends HTMLElement {
                 768: {
                     slidesPerView: 3,
                     watchOverflow: true,
+                    navigation: false,
+                    pagination: false,
+                    loop: false,
                 }
             },
             loop: true,
         });
-        if (!this.swiper) {
-            this.swiper = swiper;
-        } else {
-            this.swiper.destroy();
-            this.swiper = swiper;
-        }
+        this.swiper = swiper;
     }
 
     connectedCallback() {
-        this.#initSwiper();
+        if (!this.swiper) {
+            this.#initSwiper();
+        } else {
+            this.#destroySwiper();
+        }
     }
 }
 

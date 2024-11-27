@@ -142,7 +142,7 @@ nav {
     z-index: 10;
     background-color: var(--background-color);
     overflow: hidden;
-    padding: 10rem 0;
+    padding: 10rem 10rem;
 }
 
 .features h2 {
@@ -232,6 +232,14 @@ footer {
     height: 250px;
 }
 
+@media (min-width: 769px) {
+    #features .swiper-button-next,
+    #features .swiper-button-prev,
+    #features .swiper-pagination {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
@@ -242,8 +250,7 @@ footer {
     }
 
     .features {
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
+        padding: 10rem 2.5rem;
         min-height: 50dvh;
     }
 
