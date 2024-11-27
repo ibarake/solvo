@@ -123,7 +123,7 @@ nav {
 
 .cta-button {
     display: inline-block;
-    background-color: white;
+    background-color: var(--header-color);
     color: var(--primary-color);
     padding: 0.8rem 2rem;
     border-radius: 50px;
